@@ -1,0 +1,28 @@
+{
+    "name": "goat-examples-vercel-ai-mode",
+    "version": "0.2.11",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "vitest run --passWithNoTests"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@ai-sdk/openai": "^1.0.4",
+        "@goat-sdk/adapter-vercel-ai": "workspace:*",
+        "@goat-sdk/core": "workspace:*",
+        "@goat-sdk/plugin-erc20": "workspace:*",
+        "@goat-sdk/plugin-erc721": "workspace:*",
+        "@goat-sdk/plugin-kim": "workspace:*",
+        "@goat-sdk/wallet-evm": "workspace:*",
+        "@goat-sdk/wallet-viem": "workspace:*",
+        "ai": "catalog:",
+        "dotenv": "^16.4.5",
+        "viem": "2.21.49"
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+    "devDependencies": {
+        "@types/node": "^22.13.0"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "extends": "C:/codespace/decentralized-chat-app-master/AIxCrypto/Wallet-Agent/tsconfig.base.json",
+    "compilerOptions": {
+      "outDir": "dist"
+    },
+    "include": ["index.ts"],
+    "exclude": ["node_modules", "dist"]
+  }
+  
