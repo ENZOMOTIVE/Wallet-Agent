@@ -1,23 +1,8 @@
-# Vercel AI with Mode Example
 
-## Setup
+# Wallet Agent: Get insights from top trader's wallet behaviour
+This project aims to revolutionize trading by leveraging artificial intelligence to analyze the behavior of top traders on the MODE Blockchain. The AI-based system will fetch real-time transaction data from the blockchain, focusing on the wallets of successful and high-performing traders. By analyzing transaction logs and wallet activity, the AI will gain insights into trading strategies, patterns, and decision-making processes, which will then be shared with users to help them improve their own trading skills.
 
-Copy the `.env.template` and populate with your values.
-
-```
-cp .env.template .env
-```
-
-## Usage
-
-Run the following command from the /mode directory:
-
-```
-npx ts-node index.ts
-```
-# Blockchain and Cryptocurrency Agent
-
-This project provides an agent that offers a variety of functionalities for interacting with blockchain networks, specifically Ethereum and ERC20 token transactions. The agent includes wallet management, transaction operations, token swapping, liquidity management, data analytics, and the ability to post updates to Twitter.
+The AI agent will provide personalized trading guidance by offering actionable insights based on the analysis of top traders' behaviors. Additionally, it will display wallet addresses of successful traders, allowing users to explore and learn from their strategies. By continuously learning from transaction logs, the AI can adapt and enhance its recommendations over time, offering increasingly accurate and effective trading advice.
 
 ## Features
 
@@ -53,6 +38,17 @@ This project provides an agent that offers a variety of functionalities for inte
 
 ### 7. **Twitter Integration**
    - **Post Updates to Twitter**: Ability to post updates related to blockchain activities directly to Twitter.
+
+
+
+## Usage
+
+Run the following command from the /mode directory:
+
+```
+npx ts-node index.ts
+```
+
 
 ## License
 This project is licensed under the MIT License.
