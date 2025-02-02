@@ -4,6 +4,10 @@ This project aims to revolutionize trading by leveraging artificial intelligence
 
 The AI agent will provide personalized trading guidance by offering actionable insights based on the analysis of top traders' behaviors. Additionally, it will display wallet addresses of successful traders, allowing users to explore and learn from their strategies. By continuously learning from transaction logs, the AI can adapt and enhance its recommendations over time, offering increasingly accurate and effective trading advice.
 
+# System Architecture
+![Sysdiagram](https://github.com/user-attachments/assets/70804423-3b83-40c2-b3b0-07ec5c30ed53)
+
+
 ## Features
 
 ### 1. **Wallet Management**
