@@ -10,8 +10,37 @@ import { MODE, USDC, erc20 } from "@goat-sdk/plugin-erc20";
 import { kim } from "@goat-sdk/plugin-kim";
 import { sendETH } from "@goat-sdk/wallet-evm";
 import { viem } from "@goat-sdk/wallet-viem";
+import { TwitterApi } from 'twitter-api-v2';
 
 require("dotenv").config();
+
+const twitterClient = new TwitterApi({
+    appKey: process.env.TWITTER_API_KEY || '',
+    appSecret: process.env.TWITTER_API_SECRET || '',
+    accessToken: process.env.TWITTER_ACCESS_TOKEN || '',
+    accessSecret: process.env.TWITTER_ACCESS_SECRET || '',
+} as {
+    appKey: string;
+    appSecret: string;
+    accessToken: string;
+    accessSecret: string;
+});
+
+
+const rwClient = twitterClient.readWrite;
+
+async function postTweet(tweetText: string) {
+    try {
+        const tweet = await rwClient.v2.tweet(tweetText);
+        console.log('Tweet posted successfully:', tweet.data.text);
+        return tweet;
+    } catch (error) {
+        console.error('Error posting tweet:', error);
+        throw error;
+    }
+}
+
+
 
 // MODE Token Transfer event signature
 const transferEventSignature = parseAbiItem('event Transfer(address indexed from, address indexed to, uint256 value)');
@@ -148,6 +177,16 @@ async function analyzeTokenTransactions() {
                 },
             });
             console.log(result.text);
+
+            // Check if the prompt is to post the top 5 traders to Twitter
+            if (prompt.toLowerCase().includes("post top 5 traders")) {
+                const tweetText = `Top 5 MODE Token Traders by Transaction Count:\n\n${
+                    transactionAnalysis.topAddresses.map((item, index) => 
+                        `${index + 1}. ${item.address}: ${item.transactionCount} transactions`
+                    ).join('\n')
+                }\n\n#MODE #Blockchain #Crypto`;
+                await postTweet(tweetText);
+            }
         } catch (error) {
             console.error(error);
         }
